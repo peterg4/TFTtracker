@@ -16,7 +16,7 @@
 </head>
 <body ng-controller="stonk-controller" ng-init="getItems(); drawChart()">
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 		<a class="navbar-brand" href="#"><img src="favico.png" height="27" width="27"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,10 @@
       <li class="nav-item">
 				<a class="nav-link" href="#three">Items</a>
 			</li>
-		  </ul>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 right">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
 		</div>
 	</nav>
 
