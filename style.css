@@ -27,3 +27,25 @@ nav {
 .navbar-brand{
     margin-left: 25px;
 }
+.navbar{
+    min-height: 65px;
+}
+.mr-auto{
+    margin-left: auto;
+}
+.form-control{
+    margin-right: 25px;
+}
+input[type=text] {
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: -10px -10px; 
+    background-repeat: no-repeat;
+}
+input[type=text]:focus {
+    outline: none!important;
+    outline-style:none;
+    box-shadow:none;
+    border-color: #ced4da;
+}
+  
