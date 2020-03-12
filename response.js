@@ -15,7 +15,8 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 }
             })
             .error(function(data, status) {
-                alert("Error");
+                $scope.list = [];
+                $scope.list.push("Bad API Call")
             });       
     }
 }]);
