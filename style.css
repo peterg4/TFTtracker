@@ -1,5 +1,5 @@
 body{
-    background-color: #E4E9ED;
+    background-color: #f6f6f6;
     color: #141414;
 }
 .container1{
@@ -48,4 +48,6 @@ input[type=text]:focus {
     box-shadow:none;
     border-color: #ced4da;
 }
-  
+.panel{
+    background-color: white;
+}

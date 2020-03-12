@@ -14,7 +14,7 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
-<body ng-controller="stonk-controller" ng-init="getItems(); drawChart()">
+<body ng-controller="stonk-controller" ng-init="getItems()">
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 		<a class="navbar-brand" href="#"><img src="favico.png" height="27" width="27"></a>
@@ -45,6 +45,13 @@
 		</div>
 	</nav>
 
+	<div class="panel">
+		<ul>
+			<li ng-repeat="item in list">
+				{{item}}
+			</li>
+		</ul>
+	</div>
 </body>
 <script src="response.js"></script>
 </html>
