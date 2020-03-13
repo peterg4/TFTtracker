@@ -17,6 +17,12 @@ app.get('/', function(req, res){
     res.sendFile('/index.html');
 });
 
+//app.get('/challenger')
+
+
 http.listen(3000, function(){
     console.log('Server up on *:3000');
+    riotRequest.request('na1', 'summoner', '/tft/league/v1/challenger', function(err, data) {
+        console.log(data);
+    });
   });
