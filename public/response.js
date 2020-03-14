@@ -23,7 +23,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 var entry = [];
                 entry.push(data.data.entries.entries[i].leaguePoints);
                 entry.push(data.data.entries.entries[i].summonerName);
-                entry.push(data.data.entries.entries[i].leaguePoints);
+                entry.push(data.data.entries.entries[i].leaguePoints + ' LP');
                 var x = data.data.entries.entries[i].wins;
                 var y= data.data.entries.entries[i].losses;
                 entry.push( parseInt(x/y*100) + '%');

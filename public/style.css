@@ -9,6 +9,7 @@ body{
 nav {
     color: #141414;
     background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
 }
 .nav-link {
     color: #141414!important;  
@@ -57,20 +58,20 @@ input[type=text]:focus {
 }
 .col-{
     min-width: 30px;
+    margin-right: 100px;
 }
 .img-col{
     padding-left: 13px;
 }
 .playlist {
     border-bottom: 1px solid #e4eaec;
-    margin-bottom: 14px;
-    margin-top: 14px;
+    margin-bottom: 23px;
+    padding-bottom: 10px;
     vertical-align: middle;
-
 }
 .playlist h3{
     font-family: 'Montserrat', ;
     font-weight: 300;
-    margin-top:28px;
+    margin-top: 0px;
     font-size: 1em;
 }
