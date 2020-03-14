@@ -45,14 +45,42 @@
 	</nav>
 
 	<div class="panel">
-		<header>
-			{{tier}}
-		</header>
-		<ul>
-			<li ng-repeat="item in list">
-				{{item}}
-			</li>
-		</ul>
+		<div class="container">
+			<div class="row text-dark playlist head">
+				<div class="col-sm">
+					<h3 id="play">RANK</h3>
+				</div>
+				<div class="col-sm">
+					<h3>NAME</h3>
+				</div>
+				<div class="col-sm">
+					<h3>LP</h3>
+				</div>
+				<div class="col-sm">
+					<h3>WINRATE</h3>
+				</div>
+				<div class="col-sm">
+					<h3>PLAYED</h3>
+				</div>
+			</div>
+			<div ng-repeat="item in list" class="row text-dark playlist">
+				<div class="col-sm">
+					<h3> {{item[0]}}
+				</div>
+				<div class="col-sm">
+					<h3> {{item[1]}} </h3>
+				</div>
+				<div class="col-sm">
+					<h3>{{item[2]}}</h3>
+				</div>
+				<div class="col-sm">
+					<h3>{{item[3]}}</h3>
+				</div>
+				<div class="col-sm">
+					<h3>{{item[4]}}</h3>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <script src="response.js"></script>

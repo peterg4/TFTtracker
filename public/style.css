@@ -55,3 +55,22 @@ input[type=text]:focus {
     margin-right: auto;
     background-color: white;
 }
+.col-{
+    min-width: 30px;
+}
+.img-col{
+    padding-left: 13px;
+}
+.playlist {
+    border-bottom: 1px solid #e4eaec;
+    margin-bottom: 14px;
+    margin-top: 14px;
+    vertical-align: middle;
+
+}
+.playlist h3{
+    font-family: 'Montserrat', ;
+    font-weight: 300;
+    margin-top:28px;
+    font-size: 1em;
+}
