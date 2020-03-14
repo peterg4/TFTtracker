@@ -74,4 +74,10 @@ input[type=text]:focus {
     font-weight: 300;
     margin-top: 0px;
     font-size: 1em;
+    text-align: center;
+}
+#name {
+    text-align: left;
+    margin-left: 25px;
+    padding-left: 20px;
 }

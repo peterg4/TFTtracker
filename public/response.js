@@ -24,6 +24,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 entry.push(data.data.entries.entries[i].leaguePoints);
                 entry.push(data.data.entries.entries[i].summonerName);
                 entry.push(data.data.entries.entries[i].leaguePoints + ' LP');
+                entry.push(data.data.entries.tier);
                 var x = data.data.entries.entries[i].wins;
                 var y= data.data.entries.entries[i].losses;
                 entry.push( parseInt(x/y*100) + '%');
@@ -39,6 +40,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 entry.push(unsorted_list[i][2]);
                 entry.push(unsorted_list[i][3]);
                 entry.push(unsorted_list[i][4]);
+                entry.push(unsorted_list[i][5]);
                 $scope.list.push(entry);
             }
             console.log($scope.list)
