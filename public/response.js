@@ -42,6 +42,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 entry.push(unsorted_list[i][4]);
                 entry.push(unsorted_list[i][5]);
                 entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
+                entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
                 $scope.list.push(entry);
                 //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
                 //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
