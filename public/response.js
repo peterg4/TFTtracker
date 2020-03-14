@@ -42,9 +42,8 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 entry.push(unsorted_list[i][4]);
                 entry.push(unsorted_list[i][5]);
                 $scope.list.push(entry);
+                //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
             }
-            console.log($scope.list)
-
         })
     }
 }]);
