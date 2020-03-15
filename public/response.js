@@ -12,10 +12,12 @@ function sortFunction(a, b) {
 app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
     $scope.list = [];
     $scope.tier = "";
-    $scope.getItems = function() {
-        $http.get("/challenger").then(function(data) {
+    $scope.league = "/challenger"
+    $scope.getItems = function(league) {
+        $scope.league = league
+        $scope.list = [];
+        $http.get($scope.league).then(function(data) {
             // do something with the tracks
-           
             console.log(data);
             $scope.tier = data.data.entries.tier;
             var unsorted_list = [];

@@ -13,7 +13,7 @@
   <link rel="icon" type="image/png" href="favico.png">
 
 </head>
-<body ng-controller="stonk-controller" ng-init="getItems()">
+<body ng-controller="stonk-controller" ng-init="getItems('/challenger')">
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 		<a class="navbar-brand" href="#"><img src="favico.png" height="27" width="27"></a>
@@ -47,31 +47,31 @@
 	<div class="panel">
 		<div class="leagues">
 			<div class="row text-dark leagues">
-				<div class="col-sm active">
+				<div ng-click="getItems('/challenger')" class="col-sm active">
 					<h3>Challenger</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/grandmaster')" class="col-sm">
 					<h3>Grandmaster</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/master')" class="col-sm">
 					<h3>Master</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/diamond')" class="col-sm">
 					<h3>Diamond</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/platinum')" class="col-sm">
 					<h3>Platinum</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/gold')" class="col-sm">
 					<h3>Gold</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/silver')" class="col-sm">
 					<h3>Silver</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/bronze')" class="col-sm">
 					<h3>Bronze</h3>
 				</div>
-				<div class="col-sm">
+				<div ng-click="getItems('/iron')" class="col-sm">
 					<h3>Iron</h3>
 				</div>
 			</div>
