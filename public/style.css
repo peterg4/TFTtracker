@@ -83,12 +83,14 @@ input[type=text]:focus {
     height: 70px;
     margin-bottom: 25px;
     border-right: 1px solid #bcbcbc;
+    cursor: pointer;
 }
 .leagues h3{
     margin-top: 20px;
     font-family: 'Montserrat', ;
     color: white;
     font-size: 1.3em;
+    font-weight: 100;
     text-align: center;
 }
 #name {
