@@ -50,7 +50,8 @@ input[type=text]:focus {
 .panel{
     border: 1px solid #bcbcbc;
     width: 80%;
-    padding: 40px;
+    padding-left: 14px;
+    padding-right: 14px;
     margin-top: 85px;
     margin-left: auto;
     margin-right: auto;
@@ -59,6 +60,7 @@ input[type=text]:focus {
 .col-{
     min-width: 30px;
     margin-right: 25px;
+    margin-left: 35px;
 }
 .img-col{
     padding-left: 13px;
@@ -74,6 +76,19 @@ input[type=text]:focus {
     font-weight: 300;
     margin-top: 0px;
     font-size: 1em;
+    text-align: center;
+}
+.leagues .col-sm{
+    background-color: #2d2f37;
+    height: 70px;
+    margin-bottom: 25px;
+    border-right: 1px solid #bcbcbc;
+}
+.leagues h3{
+    margin-top: 20px;
+    font-family: 'Montserrat', ;
+    color: white;
+    font-size: 1.3em;
     text-align: center;
 }
 #name {
@@ -93,5 +108,8 @@ input[type=text]:focus {
     width: 32px;
 }
 .name {
-    margin-right: 100px;
+    min-width: 300px;
+}
+.active {
+    background-color: #dc291e!important;
 }

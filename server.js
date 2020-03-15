@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
 var RiotRequest = require('riot-lol-api');
-var riotRequest = new RiotRequest('RGAPI-0012d1dc-bf7b-4dd1-8765-f1bc9b8c7db4');
+var riotRequest = new RiotRequest('RGAPI-5a92594e-1b67-4a09-ad50-b1aa55615f1f');
 
 app.use(express.static('public'));
 
