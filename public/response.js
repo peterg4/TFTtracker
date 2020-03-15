@@ -13,6 +13,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
     $scope.list = [];
     $scope.tier = "";
     $scope.league = "/challenger"
+    $scope.currid = 'chal';
     $scope.getItems = function(league) {
         $scope.league = league
         $scope.list = [];
@@ -50,6 +51,11 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                 //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
             }
         })
+    }
+    $scope.changeActive = function(id) {
+        document.getElementById($scope.currid).className = 'col-sm'; 
+        document.getElementById(id).className = 'col-sm active';
+        $scope.currid = id;
     }
 }]);
 

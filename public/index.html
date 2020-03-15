@@ -47,31 +47,31 @@
 	<div class="panel">
 		<div class="leagues">
 			<div class="row text-dark leagues">
-				<div ng-click="getItems('/challenger')" class="col-sm active">
+				<div id="chal" ng-click="getItems('/challenger');changeActive('chal')" class="col-sm active">
 					<h3>Challenger</h3>
 				</div>
-				<div ng-click="getItems('/grandmaster')" class="col-sm">
+				<div id="gm" ng-click="getItems('/grandmaster');changeActive('gm')" class="col-sm">
 					<h3>Grandmaster</h3>
 				</div>
-				<div ng-click="getItems('/master')" class="col-sm">
+				<div id="master" ng-click="getItems('/master');changeActive('master')" class="col-sm">
 					<h3>Master</h3>
 				</div>
-				<div ng-click="getItems('/diamond')" class="col-sm">
+				<div id="dia" ng-click="getItems('/diamond');changeActive('dia')" class="col-sm">
 					<h3>Diamond</h3>
 				</div>
-				<div ng-click="getItems('/platinum')" class="col-sm">
+				<div id="plat" ng-click="getItems('/platinum');changeActive('plat')" class="col-sm">
 					<h3>Platinum</h3>
 				</div>
-				<div ng-click="getItems('/gold')" class="col-sm">
+				<div id="gold" ng-click="getItems('/gold');changeActive('gold')" class="col-sm">
 					<h3>Gold</h3>
 				</div>
-				<div ng-click="getItems('/silver')" class="col-sm">
+				<div id="silver" ng-click="getItems('/silver');changeActive('silver')" class="col-sm">
 					<h3>Silver</h3>
 				</div>
-				<div ng-click="getItems('/bronze')" class="col-sm">
+				<div id="bronze" ng-click="getItems('/bronze');changeActive('bronze')" class="col-sm">
 					<h3>Bronze</h3>
 				</div>
-				<div ng-click="getItems('/iron')" class="col-sm">
+				<div id="iron" ng-click="getItems('/iron');changeActive('iron')" class="col-sm">
 					<h3>Iron</h3>
 				</div>
 			</div>
