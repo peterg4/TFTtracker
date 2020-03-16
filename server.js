@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
 var RiotRequest = require('riot-lol-api');
-var riotRequest = new RiotRequest('RGAPI-5a92594e-1b67-4a09-ad50-b1aa55615f1f');
+var riotRequest = new RiotRequest('RGAPI-7e422c01-74ba-4a2e-9f47-e620649db7a8');
 
 app.use(express.static('public'));
 
@@ -36,19 +36,19 @@ app.get('/master', function(req, res) {
     });
 })
 app.get('/diamond', function(req, res) {
-    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/DIAMOND/I?page=1', function(err, data) {
+    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/DIAMOND/I', function(err, data) {
         console.log(data);
         res.json({entries: data});
     });
 })
 app.get('/platinum', function(req, res) {
-    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/PLATINUM/I?page=1', function(err, data) {
+    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/PLATINUM/I', function(err, data) {
         console.log(data);
         res.json({entries: data});
     });
 })
 app.get('/gold', function(req, res) {
-    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/GOLD/I?page=1', function(err, data) {
+    riotRequest.request('na1', 'summoner', '/tft/league/v1/entries/GOLD/I', function(err, data) {
         console.log(data);
         res.json({entries: data});
     });
