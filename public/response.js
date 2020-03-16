@@ -17,40 +17,77 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
     $scope.getItems = function(league) {
         $scope.league = league
         $scope.list = [];
-        $http.get($scope.league).then(function(data) {
-            // do something with the tracks
-            console.log(data);
-            $scope.tier = data.data.entries.tier;
-            var unsorted_list = [];
-            for(var i = 0; i < data.data.entries.entries.length; i++) {
-                var entry = [];
-                entry.push(data.data.entries.entries[i].leaguePoints);
-                entry.push(data.data.entries.entries[i].summonerName);
-                entry.push(data.data.entries.entries[i].leaguePoints + ' LP');
-                entry.push(data.data.entries.tier +' '+ data.data.entries.entries[i].rank);
-                var x = data.data.entries.entries[i].wins;
-                var y= data.data.entries.entries[i].losses;
-                entry.push( parseInt(x/y*100) + '%');
-                entry.push(x+y);
-               // $scope.list.push(data.data.entries.entries[i].summonerName);
-               unsorted_list.push(entry);
-            }
-            unsorted_list.sort(sortFunction);
-            for(var i = 0; i < data.data.entries.entries.length; i++) {
-                var entry = [];
-                entry.push(i+1);
-                entry.push(unsorted_list[i][1]);
-                entry.push(unsorted_list[i][2]);
-                entry.push(unsorted_list[i][3]);
-                entry.push(unsorted_list[i][4]);
-                entry.push(unsorted_list[i][5]);
-                entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
-                entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
-                $scope.list.push(entry);
-                //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
-                //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
-            }
-        })
+        if($scope.league == '/challenger' || $scope.league == '/grandmaster' || $scope.league == '/master') {
+            $http.get($scope.league).then(function(data) {
+                // do something with the tracks
+                console.log(data);
+                $scope.tier = data.data.entries.tier;
+                var unsorted_list = [];
+                for(var i = 0; i < data.data.entries.entries.length; i++) {
+                    var entry = [];
+                    entry.push(data.data.entries.entries[i].leaguePoints);
+                    entry.push(data.data.entries.entries[i].summonerName);
+                    entry.push(data.data.entries.entries[i].leaguePoints + ' LP');
+                    entry.push(data.data.entries.tier +' '+ data.data.entries.entries[i].rank);
+                    var x = data.data.entries.entries[i].wins;
+                    var y= data.data.entries.entries[i].losses;
+                    entry.push( parseInt(x/y*100) + '%');
+                    entry.push(x+y);
+                // $scope.list.push(data.data.entries.entries[i].summonerName);
+                unsorted_list.push(entry);
+                }
+                unsorted_list.sort(sortFunction);
+                for(var i = 0; i < data.data.entries.entries.length; i++) {
+                    var entry = [];
+                    entry.push(i+1);
+                    entry.push(unsorted_list[i][1]);
+                    entry.push(unsorted_list[i][2]);
+                    entry.push(unsorted_list[i][3]);
+                    entry.push(unsorted_list[i][4]);
+                    entry.push(unsorted_list[i][5]);
+                    entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
+                    entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
+                    $scope.list.push(entry);
+                    //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
+                    //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
+                }
+            })
+        } else {
+            $http.get($scope.league).then(function(data) {
+                // do something with the tracks
+                console.log(data);
+                $scope.tier = data.data.entries[0].tier;
+                var unsorted_list = [];
+                for(var i = 0; i < data.data.entries.length; i++) {
+                    var entry = [];
+                    entry.push(data.data.entries[i].leaguePoints);
+                    entry.push(data.data.entries[i].summonerName);
+                    entry.push(data.data.entries[i].leaguePoints + ' LP');
+                    entry.push(data.data.entries[i].tier +' '+ data.data.entries[i].rank);
+                    var x = data.data.entries[i].wins;
+                    var y= data.data.entries[i].losses;
+                    entry.push( parseInt(x/y*100) + '%');
+                    entry.push(x+y);
+                // $scope.list.push(data.data.entries.entries[i].summonerName);
+                unsorted_list.push(entry);
+                }
+                unsorted_list.sort(sortFunction);
+                for(var i = 0; i < data.data.entries.length; i++) {
+                    var entry = [];
+                    entry.push(i+1);
+                    entry.push(unsorted_list[i][1]);
+                    entry.push(unsorted_list[i][2]);
+                    entry.push(unsorted_list[i][3]);
+                    entry.push(unsorted_list[i][4]);
+                    entry.push(unsorted_list[i][5]);
+                    entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
+                    entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
+                    $scope.list.push(entry);
+                    //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
+                    //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
+                }
+            })
+        }
     }
     $scope.changeActive = function(id) {
         document.getElementById($scope.currid).className = 'col-sm'; 
