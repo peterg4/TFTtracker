@@ -88,7 +88,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                     entry.push(unsorted_list[i][5]);
                     entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
                     entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
-                    if(hotStreak)
+                    if(unsorted_list[i][6])
                         entry.push($sce.trustAsHtml('<img class="streak" src="favico.png">'));
                     else
                         entry.push("");
