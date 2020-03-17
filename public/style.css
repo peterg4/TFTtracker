@@ -73,9 +73,9 @@ input[type=text]:focus {
 }
 .playlist h3{
     font-family: 'Montserrat', ;
-    font-weight: 300;
+    font-weight: 500;
     margin-top: 0px;
-    font-size: 1em;
+    font-size: .8em;
     text-align: center;
 }
 .leagues .col-sm{
