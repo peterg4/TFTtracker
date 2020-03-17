@@ -9,7 +9,7 @@ function sortFunction(a, b) {
         return (a[0] > b[0]) ? -1 : 1;
     }
 }
-app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
+app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $http, $sce) {
     $scope.list = [];
     $scope.tier = "";
     $scope.league = "/challenger"
@@ -33,6 +33,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                     var y= data.data.entries.entries[i].losses;
                     entry.push( parseInt(x/y*100) + '%');
                     entry.push(x+y);
+                    entry.push(data.data.entries.entries[i].hotStreak);
                 // $scope.list.push(data.data.entries.entries[i].summonerName);
                 unsorted_list.push(entry);
                 }
@@ -47,6 +48,10 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                     entry.push(unsorted_list[i][5]);
                     entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
                     entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
+                    if(unsorted_list[i][6])
+                        entry.push($sce.trustAsHtml('<img class="streak" src="favico.png">'));
+                    else
+                        entry.push("");
                     $scope.list.push(entry);
                     //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
                     //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
@@ -84,7 +89,7 @@ app.controller("stonk-controller", ['$scope','$http',function($scope, $http) {
                     entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
                     entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
                     if(hotStreak)
-                        entry.push('<img src="favico.png"></img>');
+                        entry.push($sce.trustAsHtml('<img class="streak" src="favico.png">'));
                     else
                         entry.push("");
                     $scope.list.push(entry);
