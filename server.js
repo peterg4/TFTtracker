@@ -71,6 +71,12 @@ app.get('/iron', function(req, res) {
         res.json({entries: data});
     });
 })
+app.get('/search', function(req, res) {
+    riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
+        console.log(data);
+        res.json({entries: data});
+    });
+})
 
 http.listen(3000, function(){
     console.log('Server up on *:3000');

@@ -44,8 +44,8 @@
 		</div>
 	</nav>
 	<div class="search">
-		<form class="form my-10 my-lg-5">
-			<input class="form-control" type="text" placeholder="Search">
+		<form ng-submit ="search()" class="form my-10 my-lg-5">
+			<input class="form-control big" type="text" maxlength = "30" placeholder="Search" ng-model="name">
 		</form>
 	</div>
 	<div class="panel">
