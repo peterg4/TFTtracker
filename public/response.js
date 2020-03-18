@@ -97,8 +97,8 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             })
         }
     }
-    $scope.search = function() {
-        $http.get("/search?name="+this.text).then(function(data) {
+    $scope.search = function(name) {
+        $http.get("/search?name="+name).then(function(data) {
             // do something with the tracks
             console.log(data);
         })
