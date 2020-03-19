@@ -77,16 +77,19 @@ app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
         console.log(data);
         let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=20&api_key='+api_key);
+     //   res.json({entries: data});
         request({
             url: url,
             json: true
         }, function (error, response, body) {
         
             if (!error && response.statusCode === 200) {
-                console.log(body) // Print the json response
+                console.log(body); // Print the json response
+                let combined = {...data, ...body };
+                console.log(combined);
+                res.json({entries: combined});
             }
         })
-        res.json({entries: data});
     });
 })
 
