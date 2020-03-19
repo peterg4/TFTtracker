@@ -9,8 +9,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
+var api_key = 'RGAPI-aea22fe6-1c23-44dd-90ae-2aafc647316b';
 var RiotRequest = require('riot-lol-api');
-var riotRequest = new RiotRequest('RGAPI-aea22fe6-1c23-44dd-90ae-2aafc647316b');
+var riotRequest = new RiotRequest(api_key);
 
 app.use(express.static('public'));
 
@@ -75,7 +76,7 @@ app.get('/iron', function(req, res) {
 app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
         console.log(data);
-        let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/Ozcke-Zw5wCkJHgTrQypl_49OznwnwK1YUmrDY3oNX16U0ZYTP4HIAff1WrPkK41uODixBn89cDuaQ/ids?count=20&api_key=RGAPI-aea22fe6-1c23-44dd-90ae-2aafc647316b');
+        let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=20&api_key='+api_key);
         request({
             url: url,
             json: true
