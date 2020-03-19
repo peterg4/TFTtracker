@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var request = require("request");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
@@ -74,6 +75,16 @@ app.get('/iron', function(req, res) {
 app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
         console.log(data);
+        let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/Ozcke-Zw5wCkJHgTrQypl_49OznwnwK1YUmrDY3oNX16U0ZYTP4HIAff1WrPkK41uODixBn89cDuaQ/ids?count=20&api_key=RGAPI-aea22fe6-1c23-44dd-90ae-2aafc647316b');
+        request({
+            url: url,
+            json: true
+        }, function (error, response, body) {
+        
+            if (!error && response.statusCode === 200) {
+                console.log(body) // Print the json response
+            }
+        })
         res.json({entries: data});
     });
 })
