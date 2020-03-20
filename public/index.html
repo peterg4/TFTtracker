@@ -48,81 +48,89 @@
 			<input class="form-control big" type="text" maxlength = "30" placeholder="Search" ng-model="name">
 		</form>
 	</div>
-	<div class="panel">
-		<div class="leagues">
-			<div class="row text-dark leagues">
-				<div id="chal" ng-click="getItems('/challenger');changeActive('chal')" class="col-sm active">
-					<h3>Challenger</h3>
+
+	<main role="main" ng-show="view==1">
+		<div class="panel">
+			<h2>SEARACHADSACAHSCHA</h2>
+	  </div>
+	</main>
+	<main role="main" ng-show="view==0">
+		<div class="panel">
+			<div class="leagues">
+				<div class="row text-dark leagues">
+					<div id="chal" ng-click="getItems('/challenger');changeActive('chal')" class="col-sm active">
+						<h3>Challenger</h3>
+					</div>
+					<div id="gm" ng-click="getItems('/grandmaster');changeActive('gm')" class="col-sm">
+						<h3>Grandmaster</h3>
+					</div>
+					<div id="master" ng-click="getItems('/master');changeActive('master')" class="col-sm">
+						<h3>Master</h3>
+					</div>
+					<div id="dia" ng-click="getItems('/diamond');changeActive('dia')" class="col-sm">
+						<h3>Diamond</h3>
+					</div>
+					<div id="plat" ng-click="getItems('/platinum');changeActive('plat')" class="col-sm">
+						<h3>Platinum</h3>
+					</div>
+					<div id="gold" ng-click="getItems('/gold');changeActive('gold')" class="col-sm">
+						<h3>Gold</h3>
+					</div>
+					<div id="silver" ng-click="getItems('/silver');changeActive('silver')" class="col-sm">
+						<h3>Silver</h3>
+					</div>
+					<div id="bronze" ng-click="getItems('/bronze');changeActive('bronze')" class="col-sm">
+						<h3>Bronze</h3>
+					</div>
+					<div id="iron" ng-click="getItems('/iron');changeActive('iron')" class="col-sm">
+						<h3>Iron</h3>
+					</div>
 				</div>
-				<div id="gm" ng-click="getItems('/grandmaster');changeActive('gm')" class="col-sm">
-					<h3>Grandmaster</h3>
+			</div>
+			<div class="list">
+				<div class="row text-dark playlist head">
+					<div class="col-">
+						<h3 id="play">Rank</h3>
+					</div>
+					<div class="col-sm name">
+						<h3>Name</h3>
+					</div>
+					<div class="col-sm">
+						<h3>Tier</h3>
+					</div>
+					<div class="col-sm">
+						<h3>LP</h3>
+					</div>
+					<div class="col-sm">
+						<h3>Winrate</h3>
+					</div>
+					<div class="col-sm">
+						<h3>Played</h3>
+					</div>
 				</div>
-				<div id="master" ng-click="getItems('/master');changeActive('master')" class="col-sm">
-					<h3>Master</h3>
-				</div>
-				<div id="dia" ng-click="getItems('/diamond');changeActive('dia')" class="col-sm">
-					<h3>Diamond</h3>
-				</div>
-				<div id="plat" ng-click="getItems('/platinum');changeActive('plat')" class="col-sm">
-					<h3>Platinum</h3>
-				</div>
-				<div id="gold" ng-click="getItems('/gold');changeActive('gold')" class="col-sm">
-					<h3>Gold</h3>
-				</div>
-				<div id="silver" ng-click="getItems('/silver');changeActive('silver')" class="col-sm">
-					<h3>Silver</h3>
-				</div>
-				<div id="bronze" ng-click="getItems('/bronze');changeActive('bronze')" class="col-sm">
-					<h3>Bronze</h3>
-				</div>
-				<div id="iron" ng-click="getItems('/iron');changeActive('iron')" class="col-sm">
-					<h3>Iron</h3>
+				<div ng-repeat="item in list" class="row text-dark playlist">
+					<div class="col-">
+						<h3> {{item[0]}}
+					</div>
+					<div class="col-sm name">
+						<h3 id="name"><img class="profile-icon" src={{item[6]}}> {{item[1]}} <div class="streak-container" ng-bind-html=item[8]></div></h3>
+					</div>
+					<div class="col-sm">
+						<h3><img class="tier-icon" src={{item[7]}}> {{item[3]}}</h3>
+					</div>
+					<div class="col-sm">
+						<h3>{{item[2]}}</h3>
+					</div>
+					<div class="col-sm">
+						<h3>{{item[4]}}</h3>
+					</div>
+					<div class="col-sm">
+						<h3>{{item[5]}}</h3>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="list">
-			<div class="row text-dark playlist head">
-				<div class="col-">
-					<h3 id="play">Rank</h3>
-				</div>
-				<div class="col-sm name">
-					<h3>Name</h3>
-				</div>
-				<div class="col-sm">
-					<h3>Tier</h3>
-				</div>
-				<div class="col-sm">
-					<h3>LP</h3>
-				</div>
-				<div class="col-sm">
-					<h3>Winrate</h3>
-				</div>
-				<div class="col-sm">
-					<h3>Played</h3>
-				</div>
-			</div>
-			<div ng-repeat="item in list" class="row text-dark playlist">
-				<div class="col-">
-					<h3> {{item[0]}}
-				</div>
-				<div class="col-sm name">
-					<h3 id="name"><img class="profile-icon" src={{item[6]}}> {{item[1]}} <div class="streak-container" ng-bind-html=item[8]></div></h3>
-				</div>
-				<div class="col-sm">
-					<h3><img class="tier-icon" src={{item[7]}}> {{item[3]}}</h3>
-				</div>
-				<div class="col-sm">
-					<h3>{{item[2]}}</h3>
-				</div>
-				<div class="col-sm">
-					<h3>{{item[4]}}</h3>
-				</div>
-				<div class="col-sm">
-					<h3>{{item[5]}}</h3>
-				</div>
-			</div>
-		</div>
-	</div>
+	</main>
 </body>
 <script src="response.js"></script>
 </html>

@@ -14,6 +14,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.tier = "";
     $scope.league = "/challenger"
     $scope.currid = 'chal';
+    $scope.view = 0;
     $scope.getItems = function(league) {
         $scope.league = league
         $scope.list = [];
@@ -100,6 +101,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.search = function(name) {
         $http.get("/search?name="+name).then(function(data) {
             // do something with the tracks
+            $scope.view = 1;
             console.log(data);
         })
     }
