@@ -23,7 +23,7 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		  <ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-			  <a class="nav-link" href="#">Home</a>
+			  <a class="nav-link" ng-click="view=0;getItems('/challenger');changeActive('chal')" href="#">Home</a>
 			</li>
 			<li class="nav-item">
 			  	<a class="nav-link" href="#one">Leaderboards</a>
@@ -51,7 +51,8 @@
 
 	<main role="main" ng-show="view==1">
 		<div class="panel">
-			{{list[0].data.entries.name}}
+			<h1>{{list[0].data.entries.name}}</h1>
+			<h3>{{list[0].data.entries[0]}}</h3>
 	  </div>
 	</main>
 	<main role="main" ng-show="view==0">
