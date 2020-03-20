@@ -52,7 +52,7 @@
 	<main role="main" ng-show="view==1">
 		<div class="panel">
 			<h1>{{list[0].data.entries.name}}</h1>
-			<h3>{{list[0].data.entries[0]}}</h3>
+			<h3 ng-repeat="x in matches">{{x}}</h3>
 	  </div>
 	</main>
 	<main role="main" ng-show="view==0">
