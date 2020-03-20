@@ -102,6 +102,8 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         $http.get("/search?name="+name).then(function(data) {
             // do something with the tracks
             $scope.view = 1;
+            $scope.list = [];
+            $scope.list.push(data);
             console.log(data);
         })
     }
