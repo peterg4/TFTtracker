@@ -77,7 +77,6 @@ app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
         console.log(data);
         let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=20&api_key='+api_key);
-     //   res.json({entries: data});
         request({
             url: url,
             json: true

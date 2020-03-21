@@ -105,7 +105,8 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             $scope.view = 1;
             $scope.matches = [];
             $scope.list = [];
-            $scope.list.push(data);
+            $scope.list.push(data.data.entries.name)
+            $scope.list.push('http://ddragon.leagueoflegends.com/cdn/10.6.1/img/profileicon/'+data.data.entries.profileIconId+'.png');
             for(var i = 0; i < 10; i++) {
                 $scope.matches.push(data.data.entries[i]);
             }

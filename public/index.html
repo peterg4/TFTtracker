@@ -51,8 +51,13 @@
 
 	<main role="main" ng-show="view==1">
 		<div class="panel">
-			<h1>{{list[0].data.entries.name}}</h1>
-			<h3 ng-repeat="x in matches">{{x}}</h3>
+			<div class="profile-panel">
+				<img class = "profile-img" src={{list[1]}}>
+				<h1 class="profile-text">{{list[0]}}</h1>
+			</div>
+			<div class="profile-history">
+				<h3  ng-repeat="x in matches">{{x}}</h3>
+			</div>
 	  </div>
 	</main>
 	<main role="main" ng-show="view==0">

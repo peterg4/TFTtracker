@@ -136,3 +136,20 @@ input[type=text]:focus {
     line-height: 50px;
     height: 50px;
 }
+.profile-panel{
+    width: 80%;
+}
+.profile-img {
+    float: left;
+    margin: 30px 10px 30px 20px;
+    height: 150px;
+    width: 150px;
+}
+.profile-text {
+    margin-top: 30px;
+    float:right;
+    width: calc(100% - 190px);
+}
+.profile-history{
+    margin-top: 230px;
+}
