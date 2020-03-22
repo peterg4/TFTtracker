@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
-var api_key = 'RGAPI-f87c49d1-6751-42a3-a5ef-e608f85af7f0';
+var api_key = 'RGAPI-4763a68f-4fa5-497e-aa3b-34fff94a1974';
 var RiotRequest = require('riot-lol-api');
 var riotRequest = new RiotRequest(api_key);
 
@@ -75,7 +75,8 @@ app.get('/iron', function(req, res) {
 })
 app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
-        console.log(data);
+       // console.log(data);
+        var combined;
         let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=20&api_key='+api_key);
         request({
             url: url,
@@ -83,12 +84,28 @@ app.get('/search', function(req, res) {
         }, function (error, response, body) {
         
             if (!error && response.statusCode === 200) {
-                console.log(body); // Print the json response
-                let combined = {...data, ...body };
-                console.log(combined);
-                res.json({entries: combined});
+               // console.log(body); // Print the json response
+                var temp = {...data, ...body };
+             //   console.log(combined);
+               // res.json({entries: combined});
+         
+                url = ('https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/'+temp.id+'?api_key='+api_key);
+                request({
+                    url: url,
+                    json: true
+                }, function (error, response, body) {
+                
+                    if (!error && response.statusCode === 200) {
+                    //  console.log(body); // Print the json response
+                        combined = {...temp, ...body };
+                     console.log(combined);
+                     res.json({entries: combined});
+                    }
+                })
             }
         })
+
+//        console.log(combined);
     });
 })
 
