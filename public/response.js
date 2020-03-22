@@ -100,14 +100,22 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         }
     }
     $scope.search = function(name) {
+        console.log(name);
         $http.get("/search?name="+name).then(function(data) {
-            // do something with the tracks
+            console.log(name);
             $scope.view = 1;
             $scope.matches = [];
             $scope.list = [];
+            console.log(data);
             $scope.list.push(data.data.entries.name)
             $scope.list.push('http://ddragon.leagueoflegends.com/cdn/10.6.1/img/profileicon/'+data.data.entries.profileIconId+'.png');
-            for(var i = 0; i < 10; i++) {
+            $scope.list.push(data.data.entries[0].tier);
+            $scope.list.push(data.data.entries[0].rank);
+            $scope.list.push(data.data.entries[0].wins);
+            $scope.list.push(data.data.entries[0].wins+data.data.entries[0].losses);
+            $scope.list.push(data.data.entries.summonerLevel);
+         //   $scope.list.push(data.)
+            for(var i = 1; i < 10; i++) {
                 $scope.matches.push(data.data.entries[i]);
             }
             console.log(data);
