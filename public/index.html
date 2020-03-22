@@ -55,10 +55,11 @@
 				<img class = "profile-img" src={{list[1]}}>
 				<h1 class="profile-text">{{list[0]}}</h1>
 				<h3 class="profile-text">{{list[2]}} {{list[3]}}</h3>
-				<h3 class="profile-text">Wins: {{list[4]}} Played: {{list[5]}}</h3>
-				<h3 class="profile-text">Level: {{list[6]}}</h3>
 			</div>
 			<div class="profile-history">
+				<h3 class="profile-history-text">Wins: {{list[4]}} Played: {{list[5]}}</h3>
+				<h3 class="profile-hisotry-text">Level: {{list[6]}}</h3>
+				<h3 class="profile-history-text">Match History</h3>
 				<h3  ng-repeat="x in matches">{{x}}</h3>
 			</div>
 	  </div>
