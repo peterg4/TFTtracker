@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
-var api_key = 'RGAPI-4763a68f-4fa5-497e-aa3b-34fff94a1974';
+var api_key = 'RGAPI-d89d970d-ed30-408a-b777-584427ec96f6';
 var RiotRequest = require('riot-lol-api');
 var riotRequest = new RiotRequest(api_key);
 
@@ -84,6 +84,7 @@ app.get('/search', function(req, res) {
             console.log(error, response, body);
             if (!error && response.statusCode === 200) {
                 var temp = {...data, ...body };
+                //for each match in response data run api call on thing, change the match id to the data for each match.
                 url = ('https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/'+temp.id+'?api_key='+api_key);
                 request({
                     url: url,
