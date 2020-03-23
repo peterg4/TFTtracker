@@ -21,7 +21,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         $scope.list = [];
         if($scope.league == '/challenger' || $scope.league == '/grandmaster' || $scope.league == '/master') {
             $http.get($scope.league).then(function(data) {
-                // do something with the tracks
                 console.log(data);
                 $scope.tier = data.data.entries.tier;
                 var unsorted_list = [];
@@ -36,8 +35,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                     entry.push( parseInt(x/y*100) + '%');
                     entry.push(x+y);
                     entry.push(data.data.entries.entries[i].hotStreak);
-                // $scope.list.push(data.data.entries.entries[i].summonerName);
-                unsorted_list.push(entry);
+                    unsorted_list.push(entry);
                 }
                 unsorted_list.sort(sortFunction);
                 for(var i = 0; i < data.data.entries.entries.length; i++) {
@@ -61,7 +59,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             })
         } else {
             $http.get($scope.league).then(function(data) {
-                // do something with the tracks
                 console.log(data);
                 $scope.tier = data.data.entries[0].tier;
                 var unsorted_list = [];
@@ -76,8 +73,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                     entry.push( parseInt(x/y*100) + '%');
                     entry.push(x+y);
                     entry.push(data.data.entries[i].hotStreak);
-                // $scope.list.push(data.data.entries.entries[i].summonerName);
-                unsorted_list.push(entry);
+                    unsorted_list.push(entry);
                 }
                 unsorted_list.sort(sortFunction);
                 for(var i = 0; i < data.data.entries.length; i++) {
