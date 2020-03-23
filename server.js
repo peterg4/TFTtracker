@@ -91,19 +91,23 @@ app.get('/search', function(req, res) {
                 }, function (error, response, body) {
                     if (!error && response.statusCode === 200) {
                         combined = {...temp, ...body };
-                        console.log(combined);
+                        var req_count = 1;
                         for(var i = 1; i < 10; i++) {
+                            console.log(combined[i]);
                             url = ('https://americas.api.riotgames.com/tft/match/v1/matches/'+combined[i]+'?api_key='+api_key);
                             request({
                                 url: url,
                                 json: true
                             }, function (error, response, body) {
-                                if (!error && response.statusCode === 200) {
-                                    console.log(body);
+                                console.log(body);
+                                combined[req_count] = body;
+                                req_count++;
+                                if(req_count == 10) {
+                                    console.log(combined);
+                                    res.json({entries: combined});
                                 }
                             })
                         }
-                        res.json({entries: combined});
                     }
                 })
             }

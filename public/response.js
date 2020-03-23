@@ -98,7 +98,8 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.search = function(name) {
         console.log(name);
         $scope.view = 1;
-        $scope.list = ['Loading...']
+        $scope.list = ['Loading...'];
+        $scope.matches = [];
         $http.get("/search?name="+name).then(function(data) {
             console.log(name);
             
