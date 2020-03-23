@@ -83,7 +83,6 @@ app.get('/search', function(req, res) {
         }, function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 var temp = {...data, ...body };
-                //for each match in response data run api call on thing, change the match id to the data for each match.
                 url = ('https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/'+temp.id+'?api_key='+api_key);
                 request({
                     url: url,

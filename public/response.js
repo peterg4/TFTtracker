@@ -113,11 +113,17 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             $scope.list.push(data.data.entries[0].wins);
             $scope.list.push(data.data.entries[0].wins+data.data.entries[0].losses);
             $scope.list.push(data.data.entries.summonerLevel);
+
+
          //   $scope.list.push(data.)
             for(var i = 1; i < 10; i++) {
-                $scope.matches.push(data.data.entries[i]);
+                for(var j = 0; j < 8; j++) {
+                    if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
+                        $scope.matches.push([ data.data.entries[i].info.game_datetime,i + " Placed: " + data.data.entries[i].info.participants[j].placement]);
+                    }
+                }
             }
-            console.log(data);
+            $scope.matches.sort(sortFunction);
         })
     }
     $scope.changeActive = function(id) {
