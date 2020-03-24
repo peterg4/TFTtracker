@@ -91,7 +91,7 @@ app.get('/search', function(req, res) {
                     if (!error && response.statusCode === 200) {
                         combined = {...temp, ...body };
                         var req_count = 1;
-                        for(var i = 1; i < 10; i++) {
+                        for(var i = 1; i < 11; i++) {
                             console.log(combined[i]);
                             url = ('https://americas.api.riotgames.com/tft/match/v1/matches/'+combined[i]+'?api_key='+api_key);
                             request({
@@ -101,7 +101,7 @@ app.get('/search', function(req, res) {
                                 console.log(body);
                                 combined[req_count] = body;
                                 req_count++;
-                                if(req_count == 10) {
+                                if(req_count == 11) {
                                     console.log(combined);
                                     res.json({entries: combined});
                                 }

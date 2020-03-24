@@ -46,7 +46,7 @@
 		</div>
 	</nav>
 	<div class="search">
-		<form ng-submit ="search(name)" class="form my-10 my-lg-5">
+		<form ng-submit ="search_(name)" class="form my-10 my-lg-5">
 			<input class="form-control big" type="text" maxlength = "30" placeholder="Search" ng-model="name">
 		</form>
 	</div>
@@ -54,13 +54,13 @@
 	<main role="main" ng-show="view==1">
 		<div class="panel">
 			<div class="profile-panel">
-				<img class = "profile-img" src={{list[1]}}>
-				<h1 class="profile-text">{{list[0]}}</h1>
-				<h3 class="profile-text">{{list[2]}} {{list[3]}}</h3>
+				<img class = "profile-img" src={{search[1]}}>
+				<h1 class="profile-text">{{search[0]}}</h1>
+				<h3 class="profile-text">{{search[2]}} {{search[3]}}</h3>
 			</div>
 			<div class="profile-history">
-				<h3 class="profile-history-text">Wins: {{list[4]}} Played: {{list[5]}}</h3>
-				<h3 class="profile-hisotry-text">Level: {{list[6]}}</h3>
+				<h3 class="profile-history-text">Wins: {{search[4]}} Played: {{search[5]}}</h3>
+				<h3 class="profile-hisotry-text">Level: {{search[6]}}</h3>
 				<h3 class="profile-history-text">Match History</h3>
 				<h3  ng-repeat="x in matches">{{x[1]}}</h3>
 			</div>
