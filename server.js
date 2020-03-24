@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
-var api_key = 'RGAPI-2e2dd97b-b19e-439b-a84a-d3077c25a0b4';
+var api_key = 'RGAPI-6b74124b-e9e0-4eaf-837c-3c858be9f167';
 var RiotRequest = require('riot-lol-api');
 var riotRequest = new RiotRequest(api_key);
 
@@ -89,9 +89,11 @@ app.get('/search', function(req, res) {
                     json: true
                 }, function (error, response, body) {
                     if (!error && response.statusCode === 200) {
-                        combined = {...body, ...temp };
+                        console.log(body);
+                        console.log(temp);
+                        combined = {...temp, ...body};
                         var req_count = 1;
-                        for(var i = 0; i < 11; i++) {
+                        for(var i = 1; i < 11; i++) {
                             console.log(combined[i]);
                             url = ('https://americas.api.riotgames.com/tft/match/v1/matches/'+combined[i]+'?api_key='+api_key);
                             request({
