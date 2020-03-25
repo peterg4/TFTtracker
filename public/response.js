@@ -9,6 +9,14 @@ function sortFunction(a, b) {
         return (a[0] > b[0]) ? -1 : 1;
     }
 }
+function sortMatches(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
+    }
+    else {
+        return (a[0] < b[0]) ? -1 : 1;
+    }
+}
 app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $http, $sce) {
     $scope.list = [];
     $scope.tier = "";
@@ -114,12 +122,18 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             for(var i = 1; i < 11; i++) {
                 for(var j = 0; j < 8; j++) {;
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
-                        $scope.matches.push([ data.data.entries[i].info.game_datetime," Placed: " + data.data.entries[i].info.participants[j].placement]);
+                        var entry = [];
+                        entry.push((Date.now()-data.data.entries[i].info.game_datetime)/3600000);
+                        entry.push("#" + data.data.entries[i].info.participants[j].placement);
+                        entry.push(data.data.entries[i].info.game_length/60);
+                        entry.push(data.data.entries[i].info.participants[j].level);
+                        entry.push(data.data.entries[i].info.participants[j].gold_left)
+                        $scope.matches.push(entry);
                         continue;
                     }
                 }
             }
-            $scope.matches.sort(sortFunction);
+            $scope.matches.sort(sortMatches);
         })
     }
     $scope.changeActive = function(id) {
