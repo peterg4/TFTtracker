@@ -98,7 +98,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     }
     $scope.search_ = function(name) {
         $scope.view = 1;
-        $scope.search = ['Loading...'];
+        $scope.search = ['Loading...','giphy.gif'];
         $scope.matches = [];
         $http.get("/search?name="+name).then(function(data) {
             $scope.matches = [];
@@ -114,7 +114,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             for(var i = 1; i < 11; i++) {
                 for(var j = 0; j < 8; j++) {;
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
-                        $scope.matches.push([ data.data.entries[i].info.game_datetime,i + " Placed: " + data.data.entries[i].info.participants[j].placement]);
+                        $scope.matches.push([ data.data.entries[i].info.game_datetime," Placed: " + data.data.entries[i].info.participants[j].placement]);
                         continue;
                     }
                 }
