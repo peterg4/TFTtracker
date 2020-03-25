@@ -128,6 +128,11 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         entry.push(data.data.entries[i].info.game_length/60);
                         entry.push(data.data.entries[i].info.participants[j].level);
                         entry.push(data.data.entries[i].info.participants[j].gold_left)
+                        entry.push(parseInt(data.data.entries[i].info.game_length%60));
+                        if(entry[5] < 10) {
+                            entry[5] = '0'+parseInt(entry[5]);
+                            console.log(entry[5]);
+                        }
                         $scope.matches.push(entry);
                         continue;
                     }
