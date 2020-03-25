@@ -62,7 +62,9 @@
 				<h3 class="profile-history-text">Wins: {{search[4]}} Played: {{search[5]}}</h3>
 				<h3 class="profile-hisotry-text">Level: {{search[6]}}</h3>
 				<h3 class="profile-history-text">Match History</h3>
-				<h3  ng-repeat="x in matches">{{x[1]}}</h3>
+				<div ng-repeat="x in matches" class="match">
+					<h3>{{x[1]}}</h3>
+				</div>
 			</div>
 	  </div>
 	</main>

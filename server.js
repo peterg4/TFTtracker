@@ -89,9 +89,7 @@ app.get('/search', function(req, res) {
                     json: true
                 }, function (error, response, body) {
                     if (!error && response.statusCode === 200) {
-                        console.log(body);
-                        console.log(temp);
-                        combined = {...temp, ...body};
+                        combined = {...temp,...body};
                         var req_count = 1;
                         for(var i = 1; i < 11; i++) {
                             console.log(combined[i]);
