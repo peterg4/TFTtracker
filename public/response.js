@@ -133,6 +133,11 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                             entry[5] = '0'+parseInt(entry[5]);
                             console.log(entry[5]);
                         }
+                        if(data.data.entries[i].info.queue_id == 1100) {
+                            entry.push('Ranked');
+                        } else {
+                            entry.push('Normal');
+                        }
                         $scope.matches.push(entry);
                         continue;
                     }

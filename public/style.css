@@ -160,3 +160,7 @@ input[type=text]:focus {
     margin-top: 30px;
     font-weight: 100;
 }
+#match-placement {
+    color: #777777;
+    font-size: 2em;
+}

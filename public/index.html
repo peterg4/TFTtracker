@@ -63,12 +63,14 @@
 				<h3 class="profile-hisotry-text">Level: {{search[6]}}</h3>
 				<h3 class="profile-history-text">Match History</h3>
 				<div ng-repeat="x in matches" class="row playlist match">
-					<div class="col-">
-						<h3> {{x[1]}} </h3>
+					<div class="col-sm">
+						<h3 id="match-placement" class="text-left">{{x[1]}}</h3>
+						<h3 class="text-left">{{x[6]}}</h3>
+						<h3 class="text-left">{{x[2] | number:0}}:{{x[5]}}</h3>
+						<h3 class="text-left">{{x[0] | number:0}} hours ago</h3>
 					</div>
 					<div class="col-sm name">
-						<h3>{{x[0] | number:0}} hours ago</h3>
-						<h3>{{x[2] | number:0}}:{{x[5]}}</h3>
+							<h3>ICON here</h3>
 					</div>
 					<div class="col-sm">
 						<h3>Level: {{x[3]}}</h3>
