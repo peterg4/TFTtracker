@@ -63,26 +63,22 @@
 				<h3 class="profile-hisotry-text">Level: {{search[6]}}</h3>
 				<h3 class="profile-history-text">Match History</h3>
 				<div ng-repeat="x in matches" class="row playlist match">
-					<div class="col-sm">
+					<div class="col-">
 						<h3 id="match-placement" class="text-left">{{x[1]}}</h3>
 						<h3 class="text-left">{{x[6]}}</h3>
 						<h3 class="text-left">{{x[2] | number:0}}:{{x[5]}}</h3>
 						<h3 class="text-left">{{x[0] | number:0}} hours ago</h3>
 					</div>
-					<div class="col-sm name">
-							<h3>ICON here</h3>
+					<div class="col- units">
+						<div class="match-units" ng-repeat="image in x[7]">
+							<img class="match-units" src="champions/{{image}}.png">
+						</div>
 					</div>
-					<div class="col-sm">
+					<div class="col-">
 						<h3>Level: {{x[3]}}</h3>
 					</div>
-					<div class="col-sm">
+					<div class="col-">
 						<h3>Gold Remaining: {{x[4]}}</h3>
-					</div>
-					<div class="col-sm">
-						<h3>build details</h3>
-					</div>
-					<div class="col-sm">
-						<h3>items</h3>
 					</div>
 				</div>
 			</div>

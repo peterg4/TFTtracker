@@ -164,3 +164,14 @@ input[type=text]:focus {
     color: #777777;
     font-size: 2em;
 }
+.match-units {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    width: 38px;
+    margin: 0 2px 0 2px;
+    height: 38px;
+}
+.units {
+    width: 465px;
+}

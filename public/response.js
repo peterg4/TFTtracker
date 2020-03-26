@@ -138,6 +138,11 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         } else {
                             entry.push('Normal');
                         }
+                        var sub_entry = [];
+                        for(var k = 0; k < data.data.entries[i].info.participants[j].units.length; k++) {
+                            sub_entry.push(data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase());
+                        }
+                        entry.push(sub_entry);
                         $scope.matches.push(entry);
                         continue;
                     }
