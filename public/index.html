@@ -70,8 +70,10 @@
 						<h3 class="text-left">{{x[0] | number:0}} hours ago</h3>
 					</div>
 					<div class="col- units">
-						<div class="match-units" ng-repeat="image in x[7]">
-							<img class="match-units" src="champions/{{image}}.png">
+						<div class="unit-wrapper">
+							<div class="match-units" ng-repeat="image in x[7]">
+								<img class="match-units {{image[1]}}" src="champions/{{image[0]}}.png">
+							</div>
 						</div>
 					</div>
 					<div class="col-">

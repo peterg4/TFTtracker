@@ -173,5 +173,24 @@ input[type=text]:focus {
     height: 38px;
 }
 .units {
+    padding-top: 33px;
     width: 465px;
+}
+.unit-wrapper{
+    margin: auto;
+}
+.border-rare0{
+    border: 2px grey solid;
+}
+.border-rare1{
+    border: 2px lightgreen solid;
+}
+.border-rare2{
+    border: 2px aqua solid;
+}
+.border-rare3{
+    border: 2px purple solid;
+}
+.border-rare4{
+    border: 2px goldenrod solid;
 }

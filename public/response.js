@@ -140,7 +140,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         }
                         var sub_entry = [];
                         for(var k = 0; k < data.data.entries[i].info.participants[j].units.length; k++) {
-                            sub_entry.push(data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase());
+                            sub_entry.push([data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase(),'border-rare'+data.data.entries[i].info.participants[j].units[k].rarity]);
                         }
                         entry.push(sub_entry);
                         $scope.matches.push(entry);
