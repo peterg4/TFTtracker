@@ -197,3 +197,28 @@ input[type=text]:focus {
 .match{
     border-bottom: 1px solid #bcbcbc;
 }
+.match-img{
+    position: absolute;
+    margin-top: 23px;
+    border: 2px solid #ca9372;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+.match-level{
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    font-size: .8em;
+    left: 42px;
+    top: 62px;
+    z-index: 500;
+    background-color: #2d2f37;
+    border: #ca9372 solid 2px;
+    color: #ca9372;
+    border-radius: 50%;
+    text-align: center;
+}
+.match-profile {
+    position: relative;
+}

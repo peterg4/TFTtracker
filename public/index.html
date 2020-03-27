@@ -68,15 +68,16 @@
 						<h3 class="text-left">{{x[2] | number:0}}:{{x[5]}}</h3>
 						<h3 class="text-left">{{x[0] | number:0}} hours ago</h3>
 					</div>
+					<div class="col- match-profile">
+						<span class="match-level">{{x[3]}}</span>
+						<img class="match-img" src={{search[1]}}>
+					</div>
 					<div class="col- units">
 						<div class="unit-wrapper">
 							<div class="match-units" ng-repeat="image in x[7]">
 								<img class="match-units {{image[1]}}" src="champions/{{image[0]}}.png">
 							</div>
 						</div>
-					</div>
-					<div class="col-">
-						<h3>Level: {{x[3]}}</h3>
 					</div>
 					<div class="col-">
 						<h3>Gold Remaining: {{x[4]}}</h3>
