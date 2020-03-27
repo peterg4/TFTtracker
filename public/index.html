@@ -56,11 +56,11 @@
 			<div class="profile-panel">
 				<img class = "profile-img" src={{search[1]}}>
 				<h1 class="profile-text">{{search[0]}}</h1>
-				<h3 class="profile-text">{{search[2]}} {{search[3]}}</h3>
+				<h3 class="profile-text">{{search[2]}} {{search[3]}}: {{search[7]}} LP</h3>
 			</div>
 			<div class="profile-history">
-				<h3 class="profile-history-text">Wins: {{search[4]}} Played: {{search[5]}}</h3>
-				<h3 class="profile-hisotry-text">Level: {{search[6]}}</h3>
+				<h3 class="profile-history-text">Wins: {{search[4]}} | Played: {{search[5]}} | Level: {{search[6]}}</h3>
+				<h3 class="profile-hisotry-text"></h3>
 				<div ng-repeat="x in matches" class="row playlist match">
 					<div class="col-">
 						<h3 id="match-placement" class="text-left">{{x[1]}}</h3>

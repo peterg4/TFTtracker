@@ -168,9 +168,9 @@ input[type=text]:focus {
     margin-top: auto;
     margin-bottom: auto;
     display: inline-block;
-    width: 38px;
+    width: 40px;
     margin: 0 2px 0 2px;
-    height: 38px;
+    height: 40px;
 }
 .units {
     padding-top: 33px;
@@ -193,4 +193,7 @@ input[type=text]:focus {
 }
 .border-rare4{
     border: 2px #ffb93b solid;
+}
+.match{
+    border-bottom: 1px solid #bcbcbc;
 }
