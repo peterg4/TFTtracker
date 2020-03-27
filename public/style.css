@@ -58,9 +58,12 @@ input[type=text]:focus {
     background-color: white;
 }
 .col-{
-    min-width: 30px;
+    min-width: 60px;
     margin-right: 25px;
-    margin-left: 35px;
+    margin-left: 5px;
+}
+.first-col{
+    margin-left: 25px;
 }
 .img-col{
     padding-left: 13px;
