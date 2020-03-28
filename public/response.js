@@ -114,12 +114,12 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             console.log(data);
             $scope.search.push(data.data.entries.name)
             $scope.search.push('http://ddragon.leagueoflegends.com/cdn/10.6.1/img/profileicon/'+data.data.entries.profileIconId+'.png');
-            $scope.search.push(data.data.entries[0].tier);
-            $scope.search.push(data.data.entries[0].rank);
-            $scope.search.push(data.data.entries[0].wins);
-            $scope.search.push(data.data.entries[0].wins+data.data.entries[0].losses);
+            $scope.search.push(data.data.entries.tier);
+            $scope.search.push(data.data.entries.rank);
+            $scope.search.push(data.data.entries.wins);
+            $scope.search.push(data.data.entries.wins+data.data.entries.losses);
             $scope.search.push(data.data.entries.summonerLevel);
-            $scope.search.push(data.data.entries[0].leaguePoints);
+            $scope.search.push(data.data.entries.leaguePoints);
             for(var i = 1; i < 11; i++) {
                 for(var j = 0; j < 8; j++) {;
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
