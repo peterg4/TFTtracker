@@ -25,6 +25,8 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.matches = [];
     $scope.view = 0;
     $scope.search = ['Loading...'];
+    $scope.participants = [];
+    $scope.players = [];
     $scope.getItems = function(league) {
         $scope.league = league
         $scope.list = [];
@@ -108,6 +110,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         $scope.view = 1;
         $scope.search = ['Loading...','giphy.gif','...','...','...','...','...','...'];
         $scope.matches = [];
+        $scope.participants = [];
         $http.get("/search?name="+name).then(function(data) {
             $scope.matches = [];
             $scope.search = [];
@@ -120,8 +123,10 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             $scope.search.push(data.data.entries.wins+data.data.entries.losses);
             $scope.search.push(data.data.entries.summonerLevel);
             $scope.search.push(data.data.entries.leaguePoints);
-            for(var i = 1; i < 11; i++) {
-                for(var j = 0; j < 8; j++) {;
+            for(var i = 0; i < 10; i++) {
+                $scope.participants = [];
+                for(var j = 0; j < 8; j++) {
+                    $scope.participants.push(data.data.entries[i].metadata.participants[j]);
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
                         var entry = [];
                         entry.push((Date.now()-data.data.entries[i].info.game_datetime)/3600000);
@@ -145,9 +150,9 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         }
                         entry.push(sub_entry);
                         $scope.matches.push(entry);
-                        continue;
                     }
                 }
+                $scope.players.push($scope.participants);
             }
             $scope.matches.sort(sortMatches);
         })
