@@ -76,7 +76,7 @@ app.get('/iron', function(req, res) {
 app.get('/search', function(req, res) {
     riotRequest.request('na1', 'summoner', '/tft/summoner/v1/summoners/by-name/'+req.query.name, function(err, data) {
         var combined;
-        let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=11&api_key='+api_key);
+        let url = ('https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/'+data.puuid+'/ids?count=10&api_key='+api_key);
         request({
             url: url,
             json: true
@@ -89,9 +89,9 @@ app.get('/search', function(req, res) {
                     json: true
                 }, function (error, response, body) {
                     if (!error && response.statusCode === 200) {
-                        combined = {...temp,...body};
-                        var req_count = 1;
-                        for(var i = 1; i < 11; i++) {
+                        combined = {...temp,...body[0]};
+                        var req_count = 0;
+                        for(var i = 0; i < 10; i++) {
                             console.log(combined[i]);
                             url = ('https://americas.api.riotgames.com/tft/match/v1/matches/'+combined[i]+'?api_key='+api_key);
                             request({
@@ -106,7 +106,7 @@ app.get('/search', function(req, res) {
                                     i--;
                                     req_count--;
                                 }
-                                if(req_count == 11) {
+                                if(req_count == 10) {
                                     console.log(combined);
                                     res.json({entries: combined});
                                 }
