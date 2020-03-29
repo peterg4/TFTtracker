@@ -147,7 +147,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         var trait_list = [];
                         for(var k = 0; k < data.data.entries[i].info.participants[j].traits.length; k++) {
                             if(data.data.entries[i].info.participants[j].traits[k].tier_current > 0) {
-                                trait_list.push([data.data.entries[i].info.participants[j].traits[k].num_units,data.data.entries[i].info.participants[j].traits[k].name, data.data.entries[i].info.participants[j].traits[k].style]);
+                                trait_list.push([data.data.entries[i].info.participants[j].traits[k].num_units,data.data.entries[i].info.participants[j].traits[k].name, data.data.entries[i].info.participants[j].traits[k].style, data.data.entries[i].info.participants[j].traits[k].name.toLowerCase()]);
                             }
                         }
                         trait_list.sort(sortFunction);
