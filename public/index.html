@@ -40,8 +40,8 @@
 				<a class="nav-link" href="#three">Items</a>
 			</li>
     </ul>
-    <form class="form-inline my-2 my-lg-0 right">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <form ng-submit ="search_(name)" class="form-inline my-2 my-lg-0 right">
+        <input  class="form-control" ng-model="name" type="text" placeholder="Search" aria-label="Search">
       </form>
 		</div>
 	</nav>

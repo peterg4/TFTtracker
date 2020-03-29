@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path');
 require('dotenv').config();
-var api_key = 'RGAPI-297f3067-4bac-4f24-9fc9-77dc156e5fd2';
+var api_key = 'RGAPI-5231c651-8aeb-4f07-9016-8c18798422ee';
 var RiotRequest = require('riot-lol-api');
 var riotRequest = new RiotRequest(api_key);
 
