@@ -171,13 +171,13 @@ input[type=text]:focus {
     margin-top: auto;
     margin-bottom: auto;
     display: inline-block;
-    width: 40px;
+    width: 50px;
     margin: 0 2px 0 2px;
-    height: 40px;
+    height: 50px;
 }
 .units {
-    padding-top: 33px;
-    width: 465px;
+    padding-top: 28px;
+    width: auto;
 }
 .traits {
     padding-top: 23px;
