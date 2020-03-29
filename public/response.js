@@ -25,8 +25,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.matches = [];
     $scope.view = 0;
     $scope.search = ['Loading...'];
-    $scope.participants = [];
-    $scope.players = [];
     $scope.getItems = function(league) {
         $scope.league = league
         $scope.list = [];
@@ -110,7 +108,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         $scope.view = 1;
         $scope.search = ['Loading...','giphy.gif','...','...','...','...','...','...'];
         $scope.matches = [];
-        $scope.participants = [];
         $http.get("/search?name="+name).then(function(data) {
             $scope.matches = [];
             $scope.search = [];
@@ -124,9 +121,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             $scope.search.push(data.data.entries.summonerLevel);
             $scope.search.push(data.data.entries.leaguePoints);
             for(var i = 0; i < 10; i++) {
-                $scope.participants = [];
                 for(var j = 0; j < 8; j++) {
-                    $scope.participants.push(data.data.entries[i].metadata.participants[j]);
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
                         var entry = [];
                         entry.push((Date.now()-data.data.entries[i].info.game_datetime)/3600000);
@@ -149,10 +144,17 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                             sub_entry.push([data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase(),'border-rare'+data.data.entries[i].info.participants[j].units[k].rarity]);
                         }
                         entry.push(sub_entry);
+                        var trait_list = [];
+                        for(var k = 0; k < data.data.entries[i].info.participants[j].traits.length; k++) {
+                            if(data.data.entries[i].info.participants[j].traits[k].tier_current > 0) {
+                                trait_list.push([data.data.entries[i].info.participants[j].traits[k].num_units,data.data.entries[i].info.participants[j].traits[k].name, data.data.entries[i].info.participants[j].traits[k].style]);
+                            }
+                        }
+                        trait_list.sort(sortFunction);
+                        entry.push(trait_list);
                         $scope.matches.push(entry);
                     }
                 }
-                $scope.players.push($scope.participants);
             }
             $scope.matches.sort(sortMatches);
         })
