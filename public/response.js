@@ -24,6 +24,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.currid = 'chal';
     $scope.matches = [];
     $scope.view = 0;
+    $scope.pageLimit = 100;
     $scope.search = ['Loading...'];
     $scope.getItems = function(league) {
         $scope.league = league
