@@ -189,6 +189,7 @@ input[type=text]:focus {
     width: 60px;
     margin: 0 2px 0 2px;
     height: 60px;
+    overflow: hidden;
 }
 .unit-wrapper{
     margin: auto;
@@ -284,4 +285,7 @@ input[type=text]:focus {
     border-right: 7px solid transparent;
     
     border-bottom: 7px solid #333333;
+  }
+  .match{
+      flex-wrap: nowrap;
   }
