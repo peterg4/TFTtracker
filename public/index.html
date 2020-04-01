@@ -70,11 +70,12 @@
 					</div>
 					<div class="col- match-profile">
 						<span class="match-level">{{x[3]}}</span>
-						<img class="match-img" src={{search[1]}}>
+						<img class="match-img tooltip_" src={{search[1]}}>
 					</div>
 					<div class="col- units">
 						<div class="unit-wrapper">
-							<div class="match-units" ng-repeat="image in x[7]">
+							<div class="match-units tooltip_" ng-repeat="image in x[7]">
+								<span class="tooltiptext" style="font-family: Montserrat;">{{image[0]}}</span>
 								<img class="match-units {{image[1]}}" src="champions/{{image[0]}}.png">
 							</div>
 						</div>

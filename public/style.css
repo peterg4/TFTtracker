@@ -236,3 +236,42 @@ input[type=text]:focus {
 .match-profile {
     position: relative;
 }
+.tooltip_ {
+    font-family: 'Montserrat', ;
+    font-weight: 300;
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+}
+.tooltip_ .tooltiptext {
+    font-family: 'Montserrat', ;
+    font-weight: 100;
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px;
+
+    /* Position the tooltip */
+    position: absolute;
+    width: 100px;
+    bottom: 100%;
+    margin-bottom: 5px;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 1;
+}
+.tooltip_:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip_ .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
