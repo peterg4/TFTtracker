@@ -275,3 +275,13 @@ input[type=text]:focus {
     border-style: solid;
     border-color: white transparent transparent transparent;
 }
+.arrow-up {
+    display: none;
+    margin-left: 130px;
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    
+    border-bottom: 7px solid #333333;
+  }
