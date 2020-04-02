@@ -277,15 +277,19 @@ input[type=text]:focus {
     border-color: white transparent transparent transparent;
 }
 .arrow-up {
-    display: none;
-    margin-left: 130px;
+    color:black;
+    visibility: hidden;
+    margin-left: 19px;
     width: 0; 
     height: 0; 
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     
-    border-bottom: 7px solid #333333;
+    border-bottom: 7px solid black;
   }
+  .tooltip_:hover .arrow-up {
+    visibility: visible;
+}
   .match{
       flex-wrap: nowrap;
   }
