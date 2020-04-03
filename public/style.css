@@ -258,7 +258,6 @@ input[type=text]:focus {
     position: absolute;
     width: 100px;
     bottom: 100%;
-    margin-bottom: 5px;
     left: 50%;
     margin-left: -50px;
     z-index: 1;
@@ -275,7 +274,7 @@ input[type=text]:focus {
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     
-    border-bottom: 7px solid black;
+    border-top: 7px solid black;
   }
   .tooltip_:hover .arrow-up {
     visibility: visible;
