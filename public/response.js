@@ -142,13 +142,13 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                         }
                         var sub_entry = [];
                         for(var k = 0; k < data.data.entries[i].info.participants[j].units.length; k++) {
-                            sub_entry.push([data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase(),'border-rare'+data.data.entries[i].info.participants[j].units[k].rarity]);
+                            sub_entry.push([data.data.entries[i].info.participants[j].units[k].character_id.substring(5).toLowerCase(),'border-rare'+data.data.entries[i].info.participants[j].units[k].rarity,data.data.entries[i].info.participants[j].units[k].character_id.substring(5)]);
                         }
                         entry.push(sub_entry);
                         var trait_list = [];
                         for(var k = 0; k < data.data.entries[i].info.participants[j].traits.length; k++) {
                             if(data.data.entries[i].info.participants[j].traits[k].tier_current > 0) {
-                                trait_list.push([data.data.entries[i].info.participants[j].traits[k].num_units,data.data.entries[i].info.participants[j].traits[k].name, data.data.entries[i].info.participants[j].traits[k].style, data.data.entries[i].info.participants[j].traits[k].name.toLowerCase()]);
+                                trait_list.push([data.data.entries[i].info.participants[j].traits[k].num_units,data.data.entries[i].info.participants[j].traits[k].name, data.data.entries[i].info.participants[j].traits[k].style, data.data.entries[i].info.participants[j].traits[k].name.toLowerCase(),data.data.entries[i].info.participants[j].traits[k].style, data.data.entries[i].info.participants[j].traits[k].name]);
                             }
                         }
                         trait_list.sort(sortFunction);
