@@ -110,6 +110,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
         $scope.search = ['Loading...','giphy.gif','...','...','...','...','...','...'];
         $scope.matches = [];
         $http.get("/search?name="+name).then(function(data) {
+            
             $scope.matches = [];
             $scope.search = [];
             console.log(data);
@@ -121,6 +122,9 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
             $scope.search.push(data.data.entries.wins+data.data.entries.losses);
             $scope.search.push(data.data.entries.summonerLevel);
             $scope.search.push(data.data.entries.leaguePoints);
+            $http.get('/traits.json').then(function(res){
+                console.log(res)
+            })
             for(var i = 0; i < 10; i++) {
                 for(var j = 0; j < 8; j++) {
                     if(data.data.entries[i].metadata.participants[j] == data.data.entries.puuid) {
