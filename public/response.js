@@ -25,7 +25,7 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
     $scope.matches = [];
     $scope.view = 0;
     $scope.pageLimit = 100;
-    $scope.search = ['Loading...'];
+    $scope.search = ['Loading...','favico.png'];
     $scope.traitName =''
     $scope.getItems = function(league) {
         $scope.league = league
@@ -57,15 +57,13 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                     entry.push(unsorted_list[i][3]);
                     entry.push(unsorted_list[i][4]);
                     entry.push(unsorted_list[i][5]);
-                    entry.push('http://avatar.leagueoflegends.com/na/'+unsorted_list[i][1].toLowerCase()+'.png');
+                    entry.push('');
                     entry.push('/ranked-emblems/'+$scope.tier.toLowerCase()+'.png');
                     if(unsorted_list[i][6])
                         entry.push($sce.trustAsHtml('<img class="streak" src="favico.png">'));
                     else
                         entry.push("");
                     $scope.list.push(entry);
-                    //http://avatar.leagueoflegends.com/na/sneakyfiwa.png
-                    //http://ddragon.leagueoflegends.com/cdn/10.5.1/img/profileicon/685.png
                 }
             })
         } else {
@@ -155,7 +153,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                                     for(var l = 0; l < chars.data.length; l++) {
                                         if(chars.data[l].championId == data.data.entries[i].info.participants[j].units[k].character_id) {
                                             subsub.push(chars.data[l].name);
-                                           // console.log(sub_entry);
                                         }
                                     }
                                     sub_entry.push(subsub);
@@ -172,7 +169,6 @@ app.controller("stonk-controller", ['$scope','$http','$sce',function($scope, $ht
                                             for(var l = 0; l < res.data.length; l++) {
                                                 if(res.data[l].key == sub_entry[1]) {
                                                     sub_entry.push(res.data[l].name);
-                                                //    console.log(sub_entry);
                                                 }
                                             }
                                         trait_list.push(sub_entry);
